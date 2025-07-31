@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Select Airline</h1>
+  <div class="row">
+    {% for airline in airlines %}
+      <div class="col-md-3 mb-3">
+        <a href="{{ url_for('dashboard', airline=airline) }}"
+           class="btn btn-outline-light w-100 text-capitalize">
+          {{ airline.replace('_',' ') }}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

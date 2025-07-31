@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1 class="mb-4 text-capitalize">
+    {{ airline.replace('_',' ') }} Dashboard
+  </h1>
+  <div class="row">
+    {% for file in plot_files %}
+      <div class="col-md-3 mb-2">
+        <a href="{{ url_for('show_plot',
+                            airline=airline,
+                            filename=file) }}"
+           class="btn btn-outline-light w-100">
+          {{ file[:-5] }}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <p class="mt-4">
+    <a href="{{ url_for('choose_airline') }}"
+       class="btn btn-secondary">← Back to Airlines</a>
+  </p>
+{% endblock %}

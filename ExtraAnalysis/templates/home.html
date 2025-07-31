@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Select Date Range for Analysis</h2>
+  <form method="post" action="{{ url_for('run_analysis') }}" class="mt-4">
+    <div class="mb-3">
+      <label for="start_date" class="form-label">
+        Start Date (e.g. <em>Wed May 22 15:09:31 2019</em>)
+      </label>
+      <input type="text" class="form-control"
+             name="start_date" placeholder="%w %m %d %H:%M:%S %Y" required>
+    </div>
+    <div class="mb-3">
+      <label for="end_date" class="form-label">
+        End Date (e.g. <em>Wed Jun 22 15:09:31 2019</em>)
+      </label>
+      <input type="text" class="form-control"
+             name="end_date" placeholder="%w %m %d %H:%M:%S %Y" required>
+    </div>
+    <button type="submit" class="btn btn-outline-light">
+      Run Analysis
+    </button>
+  </form>
+{% endblock %}
